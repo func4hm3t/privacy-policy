@@ -4,169 +4,157 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
-  <title>Gizlilik Politikası | Climb Runner</title>
+  <title>Gizlilik Politikası | MergeBox</title>
 
   <style>
-    :root{
-      --bg:#0b1220;
-      --card:#0f1a2e;
-      --text:#e6edf7;
-      --muted:#a9b7cf;
-      --line:rgba(255,255,255,.10);
-      --accent:#58d1ff;
-      --accent2:#7c5cff;
+    :root {
+      --bg: #0b1220;
+      --card: #0f1a2e;
+      --text: #e6edf7;
+      --muted: #a9b7cf;
+      --line: rgba(255,255,255,.10);
+      --accent: #58d1ff;
+      --accent2: #7c5cff;
       --shadow: 0 18px 50px rgba(0,0,0,.35);
       --radius: 18px;
       --max: 920px;
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     }
 
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg:#f5f7fb;
-        --card:#ffffff;
-        --text:#0c1322;
-        --muted:#55627a;
-        --line:rgba(12,19,34,.12);
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f5f7fb;
+        --card: #ffffff;
+        --text: #0c1322;
+        --muted: #55627a;
+        --line: rgba(12,19,34,.12);
         --shadow: 0 18px 50px rgba(12,19,34,.10);
       }
     }
 
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family:var(--font);
-      color:var(--text);
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
       background:
         radial-gradient(900px 450px at 10% 0%, rgba(88,209,255,.22), transparent 55%),
         radial-gradient(700px 400px at 90% 10%, rgba(124,92,255,.18), transparent 60%),
-        radial-gradient(600px 350px at 50% 120%, rgba(88,209,255,.10), transparent 60%),
         var(--bg);
-      line-height:1.6;
+      line-height: 1.6;
     }
 
-    header{
-      padding:56px 18px 22px;
+    header { padding: 56px 18px 22px; }
+    main { padding: 18px 18px 56px; }
+    footer { padding: 22px 18px 40px; color: var(--muted); font-size: 14px; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
     }
 
-    .wrap{
-      width:min(var(--max), calc(100% - 36px));
-      margin:0 auto;
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: 14px;
     }
 
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:8px 12px;
-      border:1px solid var(--line);
-      border-radius:999px;
-      background:rgba(255,255,255,.04);
-      color:var(--muted);
-      font-size:14px;
-    }
-    .dot{
-      width:10px;height:10px;border-radius:50%;
-      background:linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow:0 0 0 4px rgba(88,209,255,.12);
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 4px rgba(88,209,255,.12);
     }
 
-    h1{
-      margin:16px 0 10px;
-      font-size:clamp(28px, 3.2vw, 40px);
-      letter-spacing:-.02em;
-      line-height:1.15;
-    }
-    .subtitle{
-      margin:0;
-      color:var(--muted);
-      max-width:68ch;
-      font-size:16px;
+    h1 {
+      margin: 16px 0 10px;
+      font-size: clamp(28px, 3.2vw, 40px);
+      line-height: 1.15;
     }
 
-    main{ padding:18px 18px 56px; }
-
-    .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
+    h2 {
+      margin: 26px 0 10px;
+      font-size: 18px;
     }
 
-    .content{
-      padding:28px;
+    p { margin: 10px 0; color: var(--text); }
+    ul { margin: 10px 0 0 18px; padding: 0; }
+    li { margin: 8px 0; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      max-width: 68ch;
+      font-size: 16px;
     }
 
-    h2{
-      margin:26px 0 10px;
-      font-size:18px;
-      letter-spacing:-.01em;
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
-    p{ margin:10px 0; color:var(--text); }
-    .muted{ color:var(--muted); }
+    .content { padding: 28px; }
+    .muted { color: var(--muted); }
 
-    ul{
-      margin:10px 0 0 18px;
-      padding:0;
-      color:var(--text);
-    }
-    li{ margin:8px 0; }
-
-    .grid{
-      display:grid;
+    .grid {
+      display: grid;
       grid-template-columns: 1fr;
-      gap:14px;
-      margin-top:14px;
-    }
-    @media (min-width: 860px){
-      .grid{ grid-template-columns: 1fr 1fr; }
+      gap: 14px;
+      margin-top: 14px;
     }
 
-    .mini{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:16px;
-      background:rgba(255,255,255,.03);
-    }
-    .mini b{ display:block; margin-bottom:6px; }
-
-    a{
-      color:var(--accent);
-      text-decoration:none;
-    }
-    a:hover{ text-decoration:underline; }
-
-    footer{
-      padding:22px 18px 40px;
-      color:var(--muted);
-      font-size:14px;
+    @media (min-width: 860px) {
+      .grid { grid-template-columns: 1fr 1fr; }
     }
 
-    .divider{
-      height:1px;
-      background:var(--line);
-      margin:22px 0;
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      background: rgba(255,255,255,.03);
     }
 
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 12px;
-      border:1px solid var(--line);
-      border-radius:12px;
-      background:rgba(255,255,255,.03);
+    .mini b {
+      display: block;
+      margin-bottom: 6px;
     }
 
-    code{
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 22px 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,.03);
+    }
+
+    code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       font-size: 13px;
-      padding:2px 6px;
-      border:1px solid var(--line);
-      border-radius:8px;
-      background:rgba(255,255,255,.03);
+      padding: 2px 6px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255,255,255,.03);
     }
   </style>
 </head>
@@ -174,11 +162,12 @@
 <body>
   <header>
     <div class="wrap">
-      <div class="badge"><span class="dot"></span> Climb Runner • Gizlilik Politikasi</div>
-      <h1>Gizlilik Politikasi</h1>
+      <div class="badge"><span class="dot"></span> MergeBox • Gizlilik Politikası</div>
+      <h1>Gizlilik Politikası</h1>
       <p class="subtitle">
-        Bu sayfa, Climb Runner uygulamasini kullandiginizda verilerin nasil ele alindigini aciklar.
-        Uygulama hesap istemez ve dogrudan ad, e-posta, telefon gibi kisisel bilgiler talep etmez.
+        Bu sayfa, MergeBox oyununu kullandığınızda hangi verilerin toplandığını,
+        bu verilerin neden kullanıldığını ve reklam hizmetleriyle ilgili bilgileri açıklar.
+        Oyun doğrudan ad, e-posta, telefon veya adres gibi bilgiler talep etmeden oynanabilir.
       </p>
     </div>
   </header>
@@ -187,75 +176,107 @@
     <div class="wrap">
       <section class="card">
         <div class="content">
-          <p class="muted"><b>Son guncelleme:</b> 01.01.2026</p>
+          <p class="muted"><b>Son güncelleme:</b> 02.06.2026</p>
 
           <h2>Toplanan Veriler</h2>
           <p>
-            Uygulama, kullanicidan dogrudan kisisel bilgi (ad, e-posta, telefon, adres) istemez.
-            Ancak reklam gosterimi ve uygulama kalitesini arttirmak icin kullanilan ucuncu taraf hizmetler
-            bazi teknik verileri otomatik olarak toplayabilir.
+            MergeBox, oyunun çalışması, skorların kaydedilmesi, liderlik tablosunun oluşturulması,
+            oyun deneyiminin iyileştirilmesi ve reklam gösterimi için sınırlı teknik veriler toplar.
           </p>
 
           <div class="grid">
             <div class="mini">
-              <b>Toplanabilecek Veriler</b>
+              <b>Toplayabileceğimiz Veriler</b>
               <ul>
-                <li><b>Cihaz Kimlikleri</b> ca-app-pub-9197946997614112~9057033871</li>
-                <li><b>Reklam Verileri</b> (gosterilen reklamlar, etkilesim olcumleri)</li>
-                <li><b>Kullanim Verileri</b> (uygulama acilis/etkilesim bilgileri)</li>
-                <li><b>Teshis Verileri</b> (cokmeler, performans bilgileri)</li>
+                <li>Cihaz kimliği veya uygulama tarafından oluşturulan benzersiz cihaz tanımlayıcısı.</li>
+                <li>Platform, işletim sistemi sürümü, uygulama sürümü ve son görülme zamanı gibi teknik bilgiler.</li>
+                <li>Oyun skorları, oyun modu, oyun süresi, birleştirme sayısı ve ulaşılan en yüksek seviye gibi oyun istatistikleri.</li>
+                <li>Liderlik tablosunda görünmesi için oyuncunun seçtiği isim ve avatar rengi.</li>
+                <li>Reklam gösterimi ve reklam etkileşimleriyle ilgili bilgiler.</li>
+                <li>Çökme, hata ve performans gibi tanılama verileri.</li>
               </ul>
             </div>
 
             <div class="mini">
-              <b>Kullanim Amaclari</b>
+              <b>Kullanım Amaçları</b>
               <ul>
-                <li>Ucuncu taraf reklam gosterimi</li>
-                <li>Analiz ve olcum (reklam/uygulama performansi)</li>
-                <li>Uygulama kararliligi ve hata duzeltme</li>
-                <li>Sahtecilik ve kotuye kullanim onleme</li>
+                <li>Skorları kaydetmek ve liderlik tablosunu göstermek.</li>
+                <li>Oyun performansını, dengeyi ve kullanıcı deneyimini iyileştirmek.</li>
+                <li>Reklamları göstermek, ölçmek ve reklam sistemlerinin çalışmasını sağlamak.</li>
+                <li>Hataları tespit etmek, kötüye kullanımı önlemek ve uygulama güvenliğini korumak.</li>
               </ul>
             </div>
           </div>
 
           <div class="divider"></div>
 
-          <h2>Veri Paylasimi</h2>
+          <h2>Hesap ve Kimlik Bilgileri</h2>
           <p>
-            Uygulama, kisisel verileri satmaz. Ucuncu taraf reklam/analiz saglayicilariyla paylasilan bilgiler,
-            yalnizca reklam gosterimi, olcum, analiz ve uygulama islevselligi icin gerektigi kadardir.
+            Oyun hesap oluşturmadan oynanabilir. Liderlik tablosunda görünmek isterseniz seçtiğiniz
+            oyuncu adı skor kayıtlarınızla birlikte saklanabilir. Cihaz kimliği, skorları aynı cihazla
+            ilişkilendirmek ve tekrar eden kayıtları yönetmek için kullanılır.
           </p>
 
-          <h2>Reklamlar ve Takip</h2>
+          <h2>Reklamlar</h2>
           <p>
-            Uygulamada ucuncu taraf reklamlar bulunabilir. Reklam ortaklari, reklam teslimi ve olcumu icin
-            cihaz kimligi gibi verileri kullanabilir. Takip tercihlerinizi cihaz ayarlarindan yonetebilirsiniz.
+            MergeBox içinde üçüncü taraf reklamlar bulunabilir. Reklam hizmetleri, reklam sunmak,
+            reklam performansını ölçmek, sahtecilik ve kötüye kullanımı önlemek için cihaz tanımlayıcıları,
+            reklam kimliği, reklam görüntüleme/etkileşim bilgileri ve benzeri teknik verileri işleyebilir.
+            Reklam ve takip tercihlerinizi cihaz ayarlarınızdan yönetebilirsiniz.
           </p>
 
-          <h2>Cocuklarin Gizliligi</h2>
+          <h2>Üçüncü Taraf Hizmetler</h2>
           <p>
-            Uygulama, bilerek cocuklardan kisisel bilgi toplamayi hedeflemez. Yanlislikla boyle bir durum oldugunu
-            dusunuyorsaniz bizimle iletisime gecin.
+            Uygulama; skor, liderlik tablosu, analiz, bulut altyapısı ve reklam gösterimi için üçüncü taraf
+            hizmetlerden yararlanabilir. Bu hizmetler verileri kendi gizlilik politikalarına göre işleyebilir.
+            Kullanılan hizmetlere Google Mobile Ads ve Supabase dahildir.
           </p>
 
-          <h2>Guvenlik</h2>
+          <h2>Veri Paylaşımı</h2>
           <p>
-            Verileri korumak icin makul onlemler alinmistir. Yine de internet uzerinden hicbir aktarim yontemi
-            %100 guvenli degildir.
+            Kişisel verileri satmayız. Veriler yalnızca oyunun çalışması, liderlik tablosu, analiz,
+            reklam gösterimi, güvenlik ve yasal yükümlülükler için gerekli olduğunda hizmet sağlayıcılarla paylaşılır.
           </p>
 
-          <h2>Degisiklikler</h2>
+          <h2>Veri Saklama</h2>
           <p>
-            Bu politika zaman zaman guncellenebilir. Guncellemeler yeni uygulama surumuyle yayinlanabilir.
+            Skor ve liderlik tablosu kayıtları, oyunun liderlik tablosu ve geçmiş skor özellikleri çalıştığı
+            sürece saklanabilir. Teknik ve tanılama verileri, uygulamayı geliştirmek ve güvenliğini sağlamak için
+            gerekli süre boyunca tutulur.
           </p>
 
-          <h2>Iletisim</h2>
+          <h2>Çocukların Gizliliği</h2>
+          <p>
+            MergeBox bilerek çocuklardan doğrudan kişisel bilgi toplamayı hedeflemez. Böyle bir bilginin
+            yanlışlıkla toplandığını düşünüyorsanız bizimle iletişime geçebilirsiniz.
+          </p>
+
+          <h2>Güvenlik</h2>
+          <p>
+            Verileri korumak için makul teknik ve idari önlemler alınır. Ancak internet üzerinden hiçbir veri
+            aktarımı veya elektronik saklama yöntemi yüzde yüz güvenli değildir.
+          </p>
+
+          <h2>Haklarınız</h2>
+          <p>
+            Verilerinizle ilgili erişim, düzeltme veya silme talepleriniz için bizimle iletişime geçebilirsiniz.
+            Talebinizi değerlendirebilmemiz için cihaz kimliğiniz veya liderlik tablosu adınız gibi gerekli
+            bilgileri isteyebiliriz.
+          </p>
+
+          <h2>Değişiklikler</h2>
+          <p>
+            Bu gizlilik politikası zaman zaman güncellenebilir. Güncellemeler bu sayfada veya yeni uygulama
+            sürümüyle yayınlanır.
+          </p>
+
+          <h2>İletişim</h2>
           <p class="pill">
             E-posta: <a href="mailto:ahmet.svs62@gmail.com">ahmet.svs62@gmail.com</a>
           </p>
 
           <p class="muted" style="margin-top:14px;">
-            Apple App Store icin <code>Privacy Policy URL</code> alanina bu sayfanin baglantisini ekleyebilirsiniz.
+            Google Play veya App Store için <code>Privacy Policy URL</code> alanına bu sayfanın bağlantısını ekleyebilirsiniz.
           </p>
         </div>
       </section>
@@ -264,7 +285,7 @@
 
   <footer>
     <div class="wrap">
-      © <span id="year"></span> Climb Runner. Tüm haklari saklidir.
+      © <span id="year"></span> MergeBox. Tüm hakları saklıdır.
     </div>
   </footer>
 
